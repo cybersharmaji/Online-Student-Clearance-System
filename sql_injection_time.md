@@ -1,4 +1,4 @@
-**Title: [sql-inject] in [Online-Student-Clearance-System] <= [v1.0]**
+**Title: [sql-injection] in [Online-Student-Clearance-System] <= [v1.0]**
 ---
 ## BUG Author: [Anuj Sharma]
 ---
@@ -18,7 +18,7 @@
 #### Vulnerability Type
 SQL Injection Vulnerability (CWE-89: SQL Injection)
 
-### Root Cause
+#### Root Cause
 The code directly concatenates user input into SQL query strings without any parameterization or input validation, allowing attackers to inject malicious SQL code.
 
 <img width="644" alt="cve_01" src="https://github.com/user-attachments/assets/2e29c22a-be41-47fd-9d0e-606cc3f24f17" />
@@ -40,7 +40,10 @@ The code directly concatenates user input into SQL query strings without any par
 - Database information can be obtained through Time Based injection
 - Time based injection might reveal more information
 
-#### 3. Attack Payload Examples: sql: txtusername=test ' AND (SELECT 1824 FROM (SELECT(SLEEP(5)))nyKW) AND 'amlx'='amLx&txtpassword=test
+#### 3. Attack Payload Examples: 
+```
+sql: txtusername=test ' AND (SELECT 1824 FROM (SELECT(SLEEP(5)))nyKW) AND 'amlx'='amLx&txtpassword=test
+```
 <img width="734" alt="cve_1" src="https://github.com/user-attachments/assets/eda43d16-b6af-4cdb-8e6b-6c773dd2d13f" />
 
 ### Code Scan:
@@ -71,14 +74,14 @@ txtusername=test ' AND (SELECT 1824 FROM (SELECT(SLEEP(5)))nyKW) AND 'amlx'='amL
 
 ### Suggested Remediation:
 ---
-1.Implement Prepared Statements
-2. Input Validation
-3. Security Recommendations
- - Implement principle of least privilege
- - Encrypt sensitive data storage
- - Implement WAF protection
- - Conduct regular security audits
- - Use ORM frameworks for database operations
+- Implement Prepared Statements
+- Input Validation
+- Security Recommendations
+  - Implement principle of least privilege
+  - Encrypt sensitive data storage
+  - Implement WAF protection
+  - Conduct regular security audits
+  - Use ORM frameworks for database operations
 
 ### Additional Information:
 ---
@@ -90,7 +93,7 @@ txtusername=test ' AND (SELECT 1824 FROM (SELECT(SLEEP(5)))nyKW) AND 'amlx'='amL
  - CWE-89: SQL Injection
  - CERT Oracle Secure Coding Standard for Java
 
-The severity of this vulnerability is HIGH, and immediate remediation is recommended as it poses a serious threat to the system's data security.
+The severity of this vulnerability is ***HIGH***, and immediate remediation is recommended as it poses a serious threat to the system's data security.
 
 Mitigation Timeline:
 
