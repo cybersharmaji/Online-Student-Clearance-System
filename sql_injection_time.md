@@ -11,6 +11,10 @@
 
 ### Vulnerability Details
 ---
+- Type: Time Based SQL Injection
+- Affected URL: http://localhost/student_clearance_system/Admin/login.php
+- Vulnerable Parameter: username
+
 #### Vulnerable Files:
 - File Name: Login.php
 - Path: student_clearance_system/Admin/login.php
@@ -20,7 +24,7 @@ SQL Injection Vulnerability (CWE-89: SQL Injection)
 
 #### Root Cause
 The code directly concatenates user input into SQL query strings without any parameterization or input validation, allowing attackers to inject malicious SQL code.
-
+***Line 18 is causing the vulnerability***
 <img width="644" alt="cve_01" src="https://github.com/user-attachments/assets/2e29c22a-be41-47fd-9d0e-606cc3f24f17" />
 
 ### Impact:
