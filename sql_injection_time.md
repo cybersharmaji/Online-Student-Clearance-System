@@ -20,7 +20,8 @@
 - Path: student_clearance_system/Admin/login.php
 
 #### Vulnerability Type
-SQL Injection Vulnerability (CWE-89: SQL Injection)
+- SQL Injection Vulnerability (CWE-89: SQL Injection)
+- Severity Level: CRITICAL (CVSS: 9.1)
 
 #### Root Cause
 The code directly concatenates user input into SQL query strings without any parameterization or input validation, allowing attackers to inject malicious SQL code.
